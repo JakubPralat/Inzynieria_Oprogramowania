@@ -1,0 +1,11 @@
+C:\Users\Kacper\source\repos\IO\IO\bin\Debug\IO.exe
+C:\Users\Kacper\source\repos\IO\IO\bin\Debug\IO.pdb
+C:\Users\Kacper\source\repos\IO\IO\obj\Debug\IO.csprojResolveAssemblyReference.cache
+C:\Users\Kacper\source\repos\IO\IO\obj\Debug\IO.csproj.CoreCompileInputs.cache
+C:\Users\Kacper\source\repos\IO\IO\obj\Debug\IO.exe
+C:\Users\Kacper\source\repos\IO\IO\obj\Debug\IO.pdb
+C:\Users\Kuba\Desktop\Studia\SEM V\IOLab\1 laby\IO\IO\obj\Debug\IO.exe
+C:\Users\Kuba\Desktop\Studia\SEM V\IOLab\1 laby\IO\IO\obj\Debug\IO.pdb
+C:\Users\Kuba\Desktop\Studia\SEM V\IOLab\1 laby\IO\IO\obj\Debug\IO.csprojResolveAssemblyReference.cache
+C:\Users\Kuba\Desktop\Studia\SEM V\IOLab\1 laby\IO\IO\bin\Debug\IO.exe
+C:\Users\Kuba\Desktop\Studia\SEM V\IOLab\1 laby\IO\IO\bin\Debug\IO.pdb

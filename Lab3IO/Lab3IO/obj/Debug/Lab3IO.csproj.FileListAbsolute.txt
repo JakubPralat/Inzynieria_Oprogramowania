@@ -1,0 +1,6 @@
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\bin\Debug\Lab3IO.exe.config
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\bin\Debug\Lab3IO.exe
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\bin\Debug\Lab3IO.pdb
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\obj\Debug\Lab3IO.csprojResolveAssemblyReference.cache
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\obj\Debug\Lab3IO.exe
+c:\users\kuba\documents\visual studio 2015\Projects\Lab3IO\Lab3IO\obj\Debug\Lab3IO.pdb

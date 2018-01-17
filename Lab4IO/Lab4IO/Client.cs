@@ -11,92 +11,34 @@ namespace Lab4IO
     class Client
     {
         private TcpClient client;
-        private Task clientTask;
-        private int port;
-        private IPAddress address;
-        private bool running = false;
-        public Client()
+   
+        public void Connect()
         {
             client = new TcpClient();
+            client.Connect(IPAddress.Parse("127.0.0.1"), 2048);
         }
-
-        public Task ClientTask
+        
+        public async Task<string> Ping(string message)
         {
-            get
-            {
-                return clientTask;
-            }
-
-            set
-            {
-                this.clientTask = value;
-            }
+            byte[] buffer = new ASCIIEncoding().GetBytes(message);
+            client.GetStream().WriteAsync(buffer, 0, buffer.Length);
+            buffer = new byte[1024];
+            var t = await client.GetStream().ReadAsync(buffer, 0, buffer.Length);
+            return Encoding.UTF8.GetString(buffer, 0, t);
         }
-
-        public bool Running
+        
+        public async Task<IEnumerable<string>> keepPinging(string message, CancellationToken token)
         {
-            get
+            List<string> messagesList = new List<string>();
+            bool ended = false;
+            while (!ended)
             {
-                return running;
+                if (token.IsCancellationRequested)
+                    ended = true;
+                messagesList.Add(await Ping(message));
             }
+            return messagesList;
         }
-        public IPAddress Address
-        {
-            get
-            {
-                return address;
-            }
-            set
-            {
-                if (!running) address = value;
-                else throw new Exception("Proba zmiany adresu IP w trakcie dzialania serwera.");
-            }
-            }
-
-        public int Port
-        {
-            get
-            {
-                return port;
-            }
-            set
-            {
-                if (!running) port = value;
-                else throw new Exception("Proba zmiany portu w trakcie dzialania serwera.");
-            }
-            }
-
-        public void Run()
-        {
-            clientTask = runAsync();
-        }
-
-        async Task runAsync()
-        {
-            try
-            {
-                client.Start();
-                running = true;
-            }
-            catch
-            {
-                throw new Exception("todo");
-            }
-            while (true)
-            {
-                TcpClient client = await client.AcceptTcpClientAsync();
-                byte[] buffer = new byte[1024];
-                await client.GetStream().ReadAsync(buffer, 0, buffer.Length).ContinueWith(
-                    async (t) =>
-                    {
-                        int i = t.Result;
-                        while (true)
-                        {
-                            client.GetStream().WriteAsync(buffer, 0, i);
-                            i = await client.GetStream().ReadAsync(buffer, 0, buffer.Length);
-                        }
-                    });
-            }
-        }
+        
     }
 }

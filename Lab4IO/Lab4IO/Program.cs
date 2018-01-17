@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Lab4IO
@@ -24,7 +25,7 @@ namespace Lab4IO
             CancellationTokenSource cancellationToken2 = new CancellationTokenSource();
             
             
-            var zm1 = client.keepPinging("Wiadomosc Client1", cancellationToken1.Token);
+            var zm1 = client1.keepPinging("Wiadomosc Client1", cancellationToken1.Token);
             var zm2 = client2.keepPinging("Wiadomosc Client2", cancellationToken2.Token);
             
             cancellationToken1.CancelAfter(3000);
